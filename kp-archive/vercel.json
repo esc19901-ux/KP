@@ -1,0 +1,1 @@
+{ "functions": { "api/ask.ts": { "maxDuration": 30 } } }
