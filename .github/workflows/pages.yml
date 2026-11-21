@@ -18,13 +18,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm install && npm run build
-        working-directory: archive/web
+      - name: Build
         env:
           VITE_AI_ENDPOINT: ${{ vars.VITE_AI_ENDPOINT }}
+        run: |
+          CFG=$(find . -name vite.config.ts -not -path '*/node_modules/*' | head -1)
+          DIR=$(dirname "$CFG")
+          echo "Project folder: $DIR"
+          echo "WEBDIR=$DIR" >> $GITHUB_ENV
+          cd "$DIR"
+          npm install
+          npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: archive/web/dist
+          path: ${{ env.WEBDIR }}/dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
