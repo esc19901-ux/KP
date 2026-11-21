@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+:root { color-scheme: light; --wa-bg:#efeae2; --wa-panel:#ffffff; --wa-head:#f0f2f5; --wa-bubble:#ffffff; --wa-line:#e9edef; --wa-text:#111b21; --wa-sub:#667781; --wa-green:#00a884; --wa-teal:#008069; --wa-hl:#ffe9a6; }
+html,body,#root { height:100%; margin:0; font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif; background:#d1d7db; color:var(--wa-text); -webkit-font-smoothing: antialiased; }
+/* WhatsApp-like wallpaper (own subtle doodle pattern, not WhatsApp's artwork) */
+.chat-bg { background-color:#efeae2; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23d9d2c5' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' opacity='.7'%3E%3Ccircle cx='24' cy='28' r='7'/%3E%3Cpath d='M70 20l8 14h-16z'/%3E%3Crect x='118' y='18' width='14' height='14' rx='3'/%3E%3Cpath d='M20 84c6-8 14-8 20 0'/%3E%3Cpath d='M78 78q8-10 16 0t16 0'/%3E%3Ccircle cx='132' cy='86' r='4'/%3E%3Cpath d='M30 132l10-10m0 10l-10-10'/%3E%3Crect x='78' y='122' width='16' height='10' rx='5'/%3E%3Cpath d='M126 126l8 0m-4-4v8'/%3E%3C/g%3E%3C/svg%3E"); }
+mark { background: var(--wa-hl); color: inherit; border-radius: 2px; }
+.flash { animation: flash 2.2s ease-out; }
+@keyframes flash { 0%,60% { box-shadow: 0 0 0 3px var(--wa-green); } 100% { box-shadow: 0 1px .5px rgba(11,20,26,.13); } }
+.bubble { box-shadow: 0 1px .5px rgba(11,20,26,.13); }
+.tail::before { content:""; position:absolute; top:0; left:-8px; width:8px; height:13px; background:var(--wa-bubble); clip-path:polygon(100% 0,0 0,100% 100%); }
+.scroll-thin::-webkit-scrollbar { width:6px } .scroll-thin::-webkit-scrollbar-thumb { background:rgba(11,20,26,.2); }
