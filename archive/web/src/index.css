@@ -1,8 +1,0 @@
-@import "tailwindcss";
-:root { --wa-bg:#efeae2; --wa-panel:#ffffff; --wa-head:#f0f2f5; --wa-bubble:#ffffff; --wa-line:#e9edef; --wa-text:#111b21; --wa-sub:#667781; --wa-green:#00a884; --wa-hl:#fff3a3; }
-@media (prefers-color-scheme: dark) { :root { --wa-bg:#0b141a; --wa-panel:#111b21; --wa-head:#202c33; --wa-bubble:#202c33; --wa-line:#222d34; --wa-text:#e9edef; --wa-sub:#8696a0; --wa-hl:#5b4b00; } }
-html,body,#root { height:100%; margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--wa-panel); color:var(--wa-text); }
-.chat-bg { background-color: var(--wa-bg); }
-mark { background: var(--wa-hl); color: inherit; border-radius: 2px; }
-.flash { animation: flash 2.2s ease-out; }
-@keyframes flash { 0%,60% { box-shadow: 0 0 0 3px var(--wa-green); } 100% { box-shadow: 0 0 0 0 transparent; } }
